@@ -1,0 +1,186 @@
+---
+olmOCR-mix-pretrain:
+    _target_: llava.data.LLaVADataset
+    data_path: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/olmOCR-mix-1025/transformed_data_png.json
+    media_dir: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/olmOCR-mix-1025/png_tarballs
+vary_pdf_cn_30w:
+    _target_: llava.data.LLaVADataset
+    data_path: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/vary/pdf_cn_30w_llava.json
+    media_dir: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/vary/pdf_cn_30w/data/pdf_data/pdf_cn_30w
+vary_pdf_en_30w:
+    _target_: llava.data.LLaVADataset
+    data_path: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/vary/pdf_en_30w_llava.json
+    media_dir: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/vary/pdf_en_30w/data/pdf_data/pdf_en_30w
+synthdog-en:
+    _target_: llava.data.LLaVADataset
+    data_path: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/synthdog/synthdog-en/data_llava/dataset.json
+    media_dir: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/synthdog/synthdog-en/data_llava/images
+synthdog-zh:
+    _target_: llava.data.LLaVADataset
+    data_path: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/synthdog/synthdog-zh/data_llava/dataset.json
+    media_dir: /lustre/hdd/LAS/wzhang-lab/mingl/code/vllm/vlm_ocr/workspace/data/synthdog/synthdog-zh/data_llava/images
+
+# ----------------- DeepMoLM Datasets ----------------- #
+
+3d_pubchem_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/3d-pubchem
+    split: train
+    media_dir: data/processed/3d-pubchem/images
+
+
+# 1. PubChem Caption (Text-to-Mol / Mol-to-Text)
+e3fp_pubchem_cap_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-cap
+    split: train
+    media_dir: data/processed/e3fp-pubchem-cap/images
+
+e3fp_pubchem_cap_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-cap
+    split: test
+    media_dir: data/processed/e3fp-pubchem-cap/images
+
+e3fp_pubchem_cap_valid:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-cap
+    split: validation
+    media_dir: data/processed/e3fp-pubchem-cap/images
+
+# 2. CheBI MolGen (Structure Generation)
+e3fp_chebi_molgen_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-chebi-molgen
+    split: train
+    media_dir: data/processed/e3fp-chebi-molgen/images
+
+e3fp_chebi_molgen_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-chebi-molgen
+    split: test
+    media_dir: data/processed/e3fp-chebi-molgen/images
+
+e3fp_chebi_molgen_valid:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-chebi-molgen
+    split: validation
+    media_dir: data/processed/e3fp-chebi-molgen/images
+
+# 3. PubChem Compound (Property/Structure)
+e3fp_pubchem_com_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-com
+    split: train
+    media_dir: data/processed/e3fp-pubchem-com/images
+
+e3fp_pubchem_com_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-com
+    split: test
+    media_dir: data/processed/e3fp-pubchem-com/images
+
+e3fp_pubchem_com_valid:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-com
+    split: validation
+    media_dir: data/processed/e3fp-pubchem-com/images
+
+# 4. PubChem Description
+e3fp_pubchem_des_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-des
+    split: train
+    media_dir: data/processed/e3fp-pubchem-des/images
+
+e3fp_pubchem_des_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-des
+    split: test
+    media_dir: data/processed/e3fp-pubchem-des/images
+
+e3fp_pubchem_des_valid:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchem-des
+    split: validation
+    media_dir: data/processed/e3fp-pubchem-des/images
+
+e3fp_pubchemqc_prop_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchemqc-prop
+    split: train
+    media_dir: data/processed/e3fp-pubchemqc-prop/images
+
+e3fp_pubchemqc_prop_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchemqc-prop
+    split: test
+    media_dir: data/processed/e3fp-pubchemqc-prop/images
+
+e3fp_pubchemqc_prop_valid:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/e3fp-pubchemqc-prop
+    split: validation
+    media_dir: data/processed/e3fp-pubchemqc-prop/images
+
+
+vis_chebi20_description_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: train_description
+    media_dir: data/processed/vis-chebi20
+
+
+vis_chebi20_description_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: test_description
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_caption_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: train_caption
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_caption_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: test_caption
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_iupac_naming_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: train_iupac_naming
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_iupac_naming_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: test_iupac_naming
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_smiles_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: train_smiles
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_smiles_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: test_smiles
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_recognition_train:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: train_recognition
+    media_dir: data/processed/vis-chebi20
+
+vis_chebi20_recognition_test:
+    _target_: llava.data.mol_dataset.MolDataset
+    data_path: data/processed/vis-chebi20
+    split: test_recognition
+    media_dir: data/processed/vis-chebi20
